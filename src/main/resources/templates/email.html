@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificación - Gestión de Faenas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #004aad;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: #333333;
+            font-size: 20px;
+        }
+
+        .content p {
+            color: #555555;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 12px;
+            color: #666666;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #004aad;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background-color: #003580;
+        }
+
+        .button2 {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #c82333;
+            /* Rojo elegante */
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .button2:hover {
+            background-color: #a71d2a;
+            /* Rojo más oscuro para el hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gestión de Faenas</h1>
+        </div>
+        <div class="content">
+            <h2 th:text="${subject}">Asunto del Correo</h2>
+            <p>Estimado/a colaborador</span>,</p>
+            <p>
+                Nos complace informarle que ha sido seleccionado para asistir a la siguiente faena.
+            </p>
+            <p>Por favor, confirme su asistencia mediente el siguiente botón:</p>
+            <a href="https://www.google.cl" class="button">Confirmar asistencia</a>
+            <p>O de lo contrario rechace esta convocatoria.</p>
+            <a th:href="${link}" class="button2">Rechazar.</a>
+            <p>Atentamente,<br>El equipo de Gestión de Faenas</p>
+        </div>
+        <div class="footer">
+            Este correo fue enviado por Gestión de Faenas. Por favor, no responda a este correo. <br>
+            © 2024 Gestión de Faenas - Todos los derechos reservados.
+        </div>
+    </div>
+</body>
+
+</html>
