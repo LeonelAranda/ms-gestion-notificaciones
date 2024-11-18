@@ -15,11 +15,11 @@ RUN mvn clean package
 
 FROM eclipse-temurin:22-jdk 
 
-COPY --from=buildstage /app/target/ms-gestión-notificaciones-0.0.1.jar /app/ms-gestión-notificaciones-0.0.1.jar
+COPY --from=buildstage /app/target/ms-gestion-notificaciones-0.0.1.jar /app/ms-gestion-notificaciones-0.0.1.jar
 
 COPY Wallet_DbCapstone /app/oracle_wallet
 
 ENV TNS_ADMIN=/app/wallet
 EXPOSE 8084
 
-ENTRYPOINT [ "java", "-jar","/app/ms-gestión-notificaciones-0.0.1.jar" ]
+ENTRYPOINT [ "java", "-jar","/app/ms-gestion-notificaciones-0.0.1.jar" ]
