@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>cl.capstone</groupId>
 	<artifactId>ms-gestion-notificaciones</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>ms-gestion-notificaciones</name>
 	<description>Microservicio enfocado a notificaciones.</description>
 	<url/>
