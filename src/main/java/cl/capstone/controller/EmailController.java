@@ -1,5 +1,7 @@
 package cl.capstone.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import cl.capstone.model.Email;
+import cl.capstone.model.Email2;
 import cl.capstone.service.IEmailService;
 import jakarta.mail.MessagingException;
 
@@ -27,6 +30,12 @@ public class EmailController {
         }
         emailService.sendMail(email);
         return new ResponseEntity<>("Correo enviado exitosamente.", HttpStatus.OK);
+    }
+
+    @PostMapping("/enviarCorreos")
+    public ResponseEntity<?> enviarCorreos(@RequestBody List<Email2> solicitudes) {
+        emailService.sendMail2(solicitudes);
+        return ResponseEntity.ok("Correos enviados correctamente");
     }
 
 }

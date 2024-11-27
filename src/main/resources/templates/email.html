@@ -104,9 +104,12 @@
                 Nos complace informarle que ha sido seleccionado para asistir a la siguiente faena.
             </p>
             <p>Por favor, confirme su asistencia mediente el siguiente botón:</p>
-            <a href="https://www.google.cl" class="button">Confirmar asistencia</a>
+            <a th:href="@{http://tuservidor.com/actualizarEstado(run=${run}, accion='aceptar')}"
+                class="button">Confirmar asistencia</a>
             <p>O de lo contrario rechace esta convocatoria.</p>
-            <a th:href="${link}" class="button2">Rechazar.</a>
+            <a th:href="@{http://tuservidor.com/actualizarEstado(run=${run}, accion='rechazar')}"
+                class="button2">Rechazar</a>
+
             <p>Atentamente,<br>El equipo de Gestión de Faenas</p>
         </div>
         <div class="footer">
