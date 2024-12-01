@@ -59,6 +59,7 @@ public class EmailService implements IEmailService {
                 // Crear contexto para la plantilla
                 Context context = new Context();
                 context.setVariable("run", email.getRun()); // Usar la propiedad `run` de `Email2`
+                context.setVariable("idFaena", email.getIdFaena());
 
                 // Generar contenido dinámico con Thymeleaf
                 String contentHTML = templateEngine.process("email", context);
@@ -68,7 +69,7 @@ public class EmailService implements IEmailService {
                 javaMailSender.send(message);
 
             } catch (Exception e) {
-                throw new RuntimeException("Error al enviar el correo electrónico: " + e.getCause(), e);
+                throw new RuntimeException("Error al enviar el correo electrónico: " + e.getMessage(), e);
             }
         }
         return email2List; // Retornar la lista procesada si es necesario

@@ -99,15 +99,15 @@
         </div>
         <div class="content">
             <h2 th:text="${subject}">Asunto del Correo</h2>
-            <p>Estimado/a colaborador</span>,</p>
+            <p>Estimado/a colaborador/a,</p>
             <p>
                 Nos complace informarle que ha sido seleccionado para asistir a la siguiente faena.
             </p>
-            <p>Por favor, confirme su asistencia mediente el siguiente botón:</p>
-            <a th:href="@{http://tuservidor.com/actualizarEstado(run=${run}, accion='aceptar')}"
+            <p>Por favor, confirme su asistencia mediante el siguiente botón:</p>
+            <a th:href="@{https://trabajadores.sistemagf.cl/api/registros/actualizar(run=${run}, idFaena=${idFaena}, nuevoTipoCumplimientoId=3)}"
                 class="button">Confirmar asistencia</a>
             <p>O de lo contrario rechace esta convocatoria.</p>
-            <a th:href="@{http://tuservidor.com/actualizarEstado(run=${run}, accion='rechazar')}"
+            <a th:href="@{https://trabajadores.sistemagf.cl/api/registros/actualizar(run=${run}, idFaena=${idFaena}, nuevoTipoCumplimientoId=41)}"
                 class="button2">Rechazar</a>
 
             <p>Atentamente,<br>El equipo de Gestión de Faenas</p>

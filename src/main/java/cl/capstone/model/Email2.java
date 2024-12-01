@@ -9,4 +9,5 @@ public class Email2 {
 
     private String email;
     private String run;
+    private Long idFaena;
 }
